@@ -159,6 +159,25 @@ span.sector i.text::-moz-selection {
 }
 
 
+/*actionDimly*/
+
+.sector {
+	transition: 0.5s ;
+}
+
+.sector_1-active,
+.sector_2-active,
+.sector_3-active {
+	opacity: 0.5;
+}
+
+.sector_1-active-notSo,
+.sector_2-active-notSo,
+.sector_3-active-notSo {
+	opacity: 0.25;
+}
+
+/*//actionDimly*/
 
 
 /*action*/
@@ -168,32 +187,14 @@ span.sector i.text::-moz-selection {
 	cursor: default;
 }
 
-/*#1*/
-
-.underText_1 {
-	opacity: 0;
-}
-
-.underText_1-active {
-	opacity: 1;
-}
-
-/*#2*/
-
-.underText_2 {
-	opacity: 0;
-}
-
-.underText_2-active {
-	opacity: 1;
-}
-
-/*#3*/
-
+.underText_1,
+.underText_2,
 .underText_3 {
 	opacity: 0;
 }
 
+.underText_1-active,
+.underText_2-active,
 .underText_3-active {
 	opacity: 1;
 }
