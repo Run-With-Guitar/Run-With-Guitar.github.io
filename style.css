@@ -162,7 +162,8 @@ span.sector i.text::-moz-selection {
 /*actionDimly*/
 
 .sector {
-	transition: 0.5s ;
+	transition: 0.7s all;
+	opacity: 0.9;
 }
 
 .sector_1-active,

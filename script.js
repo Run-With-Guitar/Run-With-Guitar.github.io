@@ -12,18 +12,18 @@ $(document).ready(function(){
 			var sectorSecond = $('.sector:nth-child(2)');
 			var sectorActiveSecond = $('.sector_2-active');
 			
-			var character3 = $('.text_3');
-			var underText3 = $('.underText_3');
-			var underTextActive3 = $('.underText_3-active');
-			var sector3 = $('.sector:nth-child(3)');
-			var sectorActive3 = $('.sector_3-active');
+			var characterThird = $('.text_3');
+			var underTextThird = $('.underText_3');
+			var underTextActiveThird = $('.underText_3-active');
+			var sectorThird = $('.sector:nth-child(3)');
+			var sectorActiveThird = $('.sector_3-active');
 
 			// #1
 			
 			character.hover(function(){
 				underText.toggleClass('underText_1-active')
 				sectorSecond.toggleClass('sector_2-active')
-				sector3.toggleClass('sector_3-active-notSo')
+				sectorThird.toggleClass('sector_3-active-notSo')
 
 			});
 
@@ -31,17 +31,17 @@ $(document).ready(function(){
 			
 			characterSecond.hover(function(){
 				underTextSecond.toggleClass('underText_2-active')
-				sector1.toggleClass('sector_1-active')
-				sector3.toggleClass('sector_3-active')
+				sector.toggleClass('sector_1-active-notSo')
+				sectorThird.toggleClass('sector_3-active')
 
 			});
 
 			// #3
 			
-			character3.hover(function(){
-				underText3.toggleClass('underText_3-active')
-				sector1.toggleClass('sector_1-active')
-				sector3.toggleClass('sector_2-active')
+			characterThird.hover(function(){
+				underTextThird.toggleClass('underText_3-active')
+				sector.toggleClass('sector_1-active-notSo')
+				sectorSecond.toggleClass('sector_2-active')
 
 			});
 		});
