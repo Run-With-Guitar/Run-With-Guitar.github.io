@@ -344,11 +344,7 @@ span.sector i.text::-moz-selection {
 @media screen and (max-device-width: 800px) {
 	.mainSection {
 		zoom : 200%;
-    background-position: center 150%;
-   
-
 	}
-
 }
 
 
