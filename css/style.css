@@ -345,6 +345,10 @@ span.sector i.text::-moz-selection {
 	.mainSection {
 		zoom : 200%;
 	}
+
+  .bottomText {
+    margin-bottom: 6%;
+  }
 }
 
 
