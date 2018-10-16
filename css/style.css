@@ -10,7 +10,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Proxima Nova';
+	font-family: 'Proxima Nova Regular';
 	overflow-x: hidden;
 
 	width: 100%;
@@ -136,7 +136,6 @@ body {
 	margin: 0;
 	padding: 0;
 
-	font-family: 'Proxima Nova';
 	font-style: normal;
 	color: white;
 	font-weight: 700;
