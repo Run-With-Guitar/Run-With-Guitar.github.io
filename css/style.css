@@ -28,7 +28,7 @@ body {
 	flex-direction: column;
 
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 }
 
 .centeredObject {
@@ -66,7 +66,7 @@ body {
 	margin-left: 97px;
 }
 
-.centeredObject .lines span.sector b.dot { /*balls*/
+.centeredObject .lines span.sector b.dot {
 	width: 8px;
 	height: 8px;
 	position: absolute;
@@ -87,10 +87,6 @@ body {
 	top: 350px;
 }
 
-/*animation*/
-
-/*#1*/
-
 @keyframes dot_1 {
 	from { transform: translateY(-110px); }
 	50% { transform: translateY(0px); }
@@ -101,8 +97,6 @@ body {
 	animation: dot_1 5s ease-in-out infinite;
 }
 
-/*#2*/
-
 @keyframes dot_2 {
 	from { transform: translateY(-110px); }
 	50% { transform: translateY(0px); }
@@ -112,8 +106,6 @@ body {
 .dot_2 {
 	animation: dot_2 9s ease-in-out infinite;
 }
-
-/*#3*/
 
 @keyframes dot_3 {
 	from { transform: translateY(100px); }
@@ -261,16 +253,12 @@ span.sector i.text::-moz-selection {
 .bottomText {
 	display: flex;
 	justify-content: center;
-
 	font-family: "Proxima Nova Regular";
 	font-size: 20px;
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
 	color: #ffffff;
-
 	margin-bottom: 3%;
-
-
 }
 
 .bottomText .dimlyText {
@@ -359,30 +347,32 @@ span.sector i.text::-moz-selection {
 
 /*////MusicPanel////*/
 
-/*.musicPanel {
+aside {
+	z-index: 20;
   position: absolute;
-  height: 100%;
   width: 25%;
+  height: 100%;
+  min-width: 350px;
 
-  background-color: transparent;
+  background-image: url(../Materials/BG.jpg);
   box-shadow: 0 0 77px 7px rgba(0, 0, 0, 0.3);
 
-  right: -25%;
+  right: -100%;
   transition: 0.7s;
   transition-timing-function: ease; 
 }
 
-.musicPanelActive {
+aside.active {
   box-shadow: 0 0 77px 7px rgba(0, 0, 0, 0.5);
   right: 0;
 }
+
 
 .controlIcons {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  padding-top: 4%;
-  padding-right: 4%;
+  padding: 4%;
   opacity: 0.5;
 }
 
@@ -405,7 +395,17 @@ span.sector i.text::-moz-selection {
 }
 
 .controlIcons .close {
-  margin-left: 4%;
+	margin-left: 4%;
+}
+
+.close:after, .back:after {
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: transparent;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
 }
 
 .controlIcons .close object {
@@ -415,6 +415,7 @@ span.sector i.text::-moz-selection {
   -o-transform: rotate(45deg); /* Для Opera */
   transform: rotate(45deg);
 }
+
 
 /*.controlIcons .close:hover {
   background-color: white;
@@ -486,9 +487,36 @@ span.sector i.text::-moz-selection {
   bottom: 5px;
     
 }*/
-
-
-
-
-
-*/
+.asideContent {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-family: 'Proxima Nova Regular';
+}
+.asideContent h3 {
+	margin: 0;
+	line-height: 53px;
+	font-size: 32px;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 4px;
+}
+.asideContent h6 {
+	margin: 0;
+	font-size: 21px;
+	line-height: 30px;
+	letter-spacing: 6px;
+	font-weight: 400;
+}
+.headerAsideContent {
+	margin-bottom: 30% !important;
+}
+.albumLinkAsideContent {
+	padding-left: 9px;
+	padding-right: 9px;
+	border-bottom: 2px solid white;
+	margin-bottom: 16% !important;
+}

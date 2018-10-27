@@ -50,11 +50,22 @@ $(document).ready(function(){
 
 
 	var brightText = $('.brightText');
-	var musicPanelActive = $('.musicPanel');
 
 	brightText.click(function(){
-		musicPanelActive.toggleClass('musicPanelActive')
+		$('.sidebar__1').toggleClass('active')
 
 	});
+	closeBtn.click(function(){
+		asides.removeClass('active')
+	});
+
+	function selectAlbum(almubname) {
+		aside.removeClass('active')
+		if (almubname == 'freedom') {
+			$('.sidebar__freedom').addClass('active')
+		} else if (almubname == 'heavy-rain') {
+			$('.sidebar__heavy-rain').addClass('active')
+		}
+	}
 
 });
