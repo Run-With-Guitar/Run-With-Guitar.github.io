@@ -341,14 +341,18 @@ body {
   opacity: 0.5;
 }
 
+.controlIcons .sidebar--back {
+	transition: all .1s;
+}
+
 .controlIcons .sidebar--back object {
 	margin-left: 1px;
 	position: absolute;
-	
 }
 
 .controlIcons .sidebar--close {
 	margin-left: 16px;
+	transition: all .1s;
 
 }
 
@@ -364,7 +368,6 @@ body {
 
 .controlIcons .sidebar--back:hover {
 	background-color: #fff;
-	transition: all .1s;
 	transform: scale(1.2);
 }
 
@@ -528,6 +531,10 @@ body {
 	background-size: 100%;
 	cursor: pointer;
 	transition: .2s;
+}
+
+.play-pause-button:hover {
+	transform: scale(1.2);
 }
 
 .pause-button {
