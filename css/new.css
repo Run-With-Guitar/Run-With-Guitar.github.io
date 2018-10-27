@@ -192,14 +192,25 @@ body {
 	color: #ffffff;
 
 	bottom: 3%;
-
-
 }
+
 
 @media screen and (max-height: 400px) {
 	.bottomText {
 		margin-top: 3%;
 		margin-bottom: 0;
+	}
+}
+
+@media screen and (max-height: 950px) {
+	.stripes .underText {
+		top: 57%;
+	}
+}
+
+@media screen and (max-height: 800px) {
+	.stripes .underText {
+		top: 59%;
 	}
 }
 
@@ -543,11 +554,7 @@ body {
 	transition: .5s;
 	cursor: default;
 }
-@media screen and (min-width: 600px){
-	.player-title:hover {
-		letter-spacing: 7px;
-	}
-}
+
 
 .player-title--invisible {
 	opacity: 0;

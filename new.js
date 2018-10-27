@@ -46,6 +46,10 @@ $(document).ready(function(){
 	backBtn = $('.sidebar--back');
 	closeBtn = $('.sidebar--close');
 
+	$('#sidebarMenu').click(function(){
+		$('.sidebar__1').toggleClass('sidebar__active')
+	});
+
 	brightText.click(function(){
 		$('.sidebar__1').toggleClass('sidebar__active')
 
@@ -62,3 +66,5 @@ $(document).ready(function(){
 		$('aside').removeClass('sidebar__active')
 	});
 });
+
+	
