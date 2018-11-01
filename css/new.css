@@ -33,6 +33,223 @@ body {
     background: rgba(255, 255, 255, 0.3); 
 }
 
+
+.hamburger {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	transition: .3s;
+
+	padding: 10px;
+	opacity: .6;
+	cursor: pointer;
+}
+.hamburger__inactive {
+	opacity: 0;
+}
+.hamburger:hover {
+	transform: scale(1.1);
+	opacity: 1;
+}
+
+.hamburger span { 
+	width: 40px;
+	height: 2px;
+	background-color: #fff;
+	margin-bottom: 10px;
+	transition: .3s;
+	animation-timing-function: ease-out;
+}
+
+.hamburger span.s1 {
+	width: 30px;
+} .hamburger span.s2 {
+	
+} .hamburger span.s3 {
+	width: 35px;
+}
+
+.hamburger:hover span.s1 {
+	width: 35px;
+} .hamburger:hover span.s2 {
+	width: 30px;
+} .hamburger:hover span.s3 {
+	width: 40px;
+}
+
+
+.contactNav { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+
+	bottom: 50px;
+	left: 50px;
+
+	border: 1px solid rgba(255,255,255, .7);
+
+	border-radius: 50px;
+	box-sizing: border-box;
+	transition: .2s all;
+}
+
+.contactNav img {
+	width: 25px;
+	height: 25px;
+}
+
+.contactBtn img {
+	margin-bottom: 5px;
+	transition: .2s;
+	position: absolute;
+}
+
+
+.contactBtn img.crossBtn {
+	opacity: 0;
+}
+
+.contactBtn:hover img.crossBtn {
+	-moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.contactBtn_active img.crossBtn {
+	opacity: .8;
+	margin-top: 2px;
+	position: absolute;
+	-moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.contactBtn img {
+	opacity: .8;
+}
+
+.contactBtn_active img:nth-child(1) {
+	opacity: 0;
+}
+
+@keyframes crossBtn {
+	from { transform: rotate(45deg); }
+	to { transform: rotate(135deg); }
+}
+
+.contactBtn_active img.crossBtn {
+	animation: crossBtn .2s;
+	-webkit-transition: all cubic-bezier(0.000, 0.900, 0.765, 0.995); 
+    -moz-transition: all cubic-bezier(0.000, 0.900, 0.765, 0.995); 
+    -o-transition: all cubic-bezier(0.000, 0.900, 0.765, 0.995); 
+    transition: all cubic-bezier(0.000, 0.900, 0.765, 0.995);
+}
+
+.contactBtn {
+	height: 60px;
+	width: 60px;
+	padding: 15px;
+	padding-right: 17px;
+	padding-left: 17px;
+	margin-left: -1px; /*чтоб не совпадали бордеры*/
+
+	border-radius: 50px;
+	background-color: transparent;
+	border-right: 1px solid rgba(255,255,255, 0);
+	transition: .3s all;
+	box-shadow: 0 0 40px 7px rgba(0, 0, 0, .4);
+	cursor: pointer;
+	box-sizing: border-box;
+} 
+
+.contactBtn_active {
+	border: 1px solid rgba(255,255,255, .8);
+}
+
+.contactNav_active {
+	border: 1px solid rgba(255,255,255, .4);
+}
+
+.contactBtn:hover img {
+	-moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+/*.contactBtn:hover img.crossBtn {
+	-moz-transform: scale(1.1) rotate(45deg);
+    -ms-transform: scale(1.1) rotate(45deg);
+    -webkit-transform: scale(1.1) rotate(45deg);
+    -o-transform: scale(1.1) rotate(45deg);
+	transform: scale(1.1) rotate(45deg);
+}*/ 
+/*не получилось сделать transition для этой анимации*/
+
+.contactBtn:hover {
+	box-shadow: 0 0 40px 7px rgba(255, 255, 255, .01);
+}
+
+.socialMedias {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	padding-left: 20px;	
+	margin: 0;
+
+	transition: .3s all;
+}
+
+.socialMedias li {
+	margin-right: 20px;
+	transition: .3s all;
+}
+
+.socialMedias li a {
+	display: block;
+	padding: 5px;
+
+	width: 35px;
+	height: 35px;
+	transition: .2s all;
+	opacity: .4;
+}
+
+.socialMedias li a:hover {
+	-moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+	transform: scale(1.2);
+	opacity: .8;
+}
+
+
+.socialMedias_passive {
+	width: 0;
+	padding: 0;
+}
+
+.socialMedias_passive li,
+.socialMedias_passive li a,
+.socialMedias_passive li a img {
+	opacity: 0;
+	width: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*---*/
+
 .stripes {
 	display: flex;
 	justify-content: center;
@@ -299,13 +516,28 @@ body {
 	background-image: url(../Materials/BG.jpg);
 	box-shadow: 0 0 77px 7px rgba(0, 0, 0, 0);
 	position: fixed;
-	right: -100%;
+	right: 0;
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
 	transition: .5s all;
 	overflow: auto;
+	will-change: transform;
+}
+
+.sidebar__freedom:before, .sidebar__heavy-rain:before {
+    display: block;
+    content: '';
+    position: absolute;
+    background: linear-gradient(to top, transparent, #fff);
+    padding: 0;
+    width: 100%;
+    height: 30%;
+    opacity: .1;
 }
 
 .sidebar__active {
-	right: 0;
+	-webkit-transform: none;
+	transform: none;
 	box-shadow: 0 0 77px 7px rgba(0, 0, 0, 0.3);
 }
 
@@ -402,11 +634,11 @@ body {
 
 .sidebar--content {
 	padding: 16px;
-	height: 80%;
 	padding-top: 40px;
 	display: block;
 	color: white;
 	font-family: 'Proxima Nova Regular';
+	min-height: 80%;
 }
 .sidebar--content__centered {
 	display: flex;
@@ -456,6 +688,8 @@ body {
 	font-weight: 700;
 	letter-spacing: 4px;
 	margin-bottom: 120px;
+	text-align: center;
+    word-break: break-word;
 }
 .sidebar--album-header {
 	opacity: 1;
@@ -530,7 +764,7 @@ body {
 	width: 26px;
 	background-size: 100%;
 	cursor: pointer;
-	transition: .1s;
+	transition: .2s;
 }
 
 .play-pause-button:hover {
@@ -662,6 +896,8 @@ body {
 		position: absolute;
 		top: 68%;
 	}
+
+
 }
 @media screen and (max-height: 450px) {
 	.stripes .underText {
@@ -671,6 +907,10 @@ body {
 	}
 }
 @media screen and (max-width: 470px) {
+	.hamburger {
+		top: 20px;
+		right: 20px;
+	}
 	.sidebar--album-image-and-info {
 		margin-bottom: 100px;
 	}
@@ -692,12 +932,7 @@ body {
 		width: calc(100% - 118px);
 		left: 41px;
 	}
-	.sidebarMenu {
-		top: 25px;
-		right: 25px;
-	}
 }
-
 @media screen and (max-width: 350px) {
 	.player-title {
 		width: calc(100% - 118px);
@@ -769,71 +1004,92 @@ body {
 	}
 }
 
-
-.sidebarMenu {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	position: absolute;
-	top: 40px;
-	right: 40px;
-	transition: .3s;
-
-	padding: 10px;
-	opacity: .6;
-	cursor: pointer;
-}
-.sidebarMenu:hover {
-	transform: scale(1.1);
-	opacity: 1;
+.socialMedias_mobile {
+	display: none;
 }
 
-.sidebarMenu span { 
-	width: 40px;
-	height: 2px;
-	background-color: #fff;
-	margin-bottom: 10px;
-	transition: .3s;
-	animation-timing-function: ease-out;
-}
+@media screen and (max-width: 1200px) {
+	.contactNav {
+		display: none;
+	}
 
-.sidebarMenu span.s1 {
-	width: 30px;
-} .sidebarMenu span.s2 {
-	
-} .sidebarMenu span.s3 {
-	width: 35px;
-}
+	.socialMedias_mobile {
+		list-style: none;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+/*		border: 1px solid #fff;*/
+		border-radius: 50px;
+		width: 50%;
 
-.sidebarMenu:hover span.s1 {
-	width: 35px;
-} .sidebarMenu:hover span.s2 {
-	width: 30px;
-} .sidebarMenu:hover span.s3 {
-	width: 40px;
-}
+		margin: 0;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 3%;
+		padding: 0;
+	}
 
-@media screen and (max-width: 600px) {
-	.sidebarMenu {
-		top: 20px;
-		right: 20px;
+	.socialMedias_mobile img {
+		width: 25px;
+		height: 25px;
+		margin: 15px;
+
+	}
+
+	.socialMedias_mobile a {
+		display: inline-block;
+		width: 55px;
+		height: 55px;
+		transition: .2s;
+		opacity: .5;
+	}
+
+	.socialMedias_mobile li {
+		display: inline-block;
+		width: 55px;
+		height: 55px;
+	}
+
+	.socialMedias_mobile a:hover {
+		display: inline-block;
+		opacity: 1;
+		
 	}
 }
 
-.sidebar__freedom:before,
-.sidebar__heavy-rain:before {
-	display: block;
-	content: '';
-	position: absolute;
-	background: linear-gradient(to top, transparent, #fff);
-    padding: 10px;
-    border: 1px solid #333;
-
-    width: 100%;
-    height: 30%;
-    opacity: .1;
-    border: 0;
+@media screen and (max-height: 550px) {
+	.socialMedias_mobile {
+		margin-top: 1%;
+		-moz-transform: scale(0.9);
+	    -ms-transform: scale(0.9);
+	    -webkit-transform: scale(0.9);
+	    -o-transform: scale(0.9);
+	    transform: scale(0.9);
+	}
 }
 
+@media screen and (min-height: 450px) {
+	.socialMedias_mobile {
+		margin-top: 0%;
+	}
+}
 
+@media screen and (min-height: 650px) {
+	.socialMedias_mobile {
+		margin-top: 7%;
+	}
+}
+
+@media screen and (min-height: 750px) {
+	.socialMedias_mobile {
+		margin-top: 10%;
+	}
+}
+
+@media screen and (min-height: 850px) {
+	.socialMedias_mobile {
+		margin-top: 15%;
+	}
+}
 

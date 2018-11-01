@@ -42,21 +42,30 @@ $(document).ready(function(){
 		// musicPanel
 
 
+	$('.contactBtn').click(function(){
+		$('.socialMedias').toggleClass('socialMedias_passive')
+		$('.contactBtn').toggleClass('contactBtn_active')
+		$('.contactNav').toggleClass('contactNav_active')
+	});
+
+
 	var brightText = $('.brightText');
 	backBtn = $('.sidebar--back');
 	closeBtn = $('.sidebar--close');
 
-	$('#sidebarMenu').click(function(){
+	$('.hamburger').click(function(){
 		$('.sidebar__1').toggleClass('sidebar__active')
+		$('.hamburger').toggleClass('hamburger__inactive')
 	});
 
 	brightText.click(function(){
 		$('.sidebar__1').toggleClass('sidebar__active')
-
+		$('.hamburger').toggleClass('hamburger__inactive')
 	});
 	backBtn.click(function(){
 		if ($(".sidebar__1").hasClass('sidebar__active')) {
 			$('aside').removeClass('sidebar__active')
+			$('.hamburger').toggleClass('hamburger__inactive')
 		} else {
 			$('aside').removeClass('sidebar__active')
 			$('.sidebar__1').toggleClass('sidebar__active')
@@ -64,7 +73,10 @@ $(document).ready(function(){
 	});
 	closeBtn.click(function(){
 		$('aside').removeClass('sidebar__active')
+		$('.hamburger').toggleClass('hamburger__inactive')
 	});
 });
+
+
 
 	
