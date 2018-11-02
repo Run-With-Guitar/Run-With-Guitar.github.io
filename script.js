@@ -18,30 +18,23 @@ $(document).ready(function(){
 	var sectorThird = $('.sector:nth-child(3)');
 	var sectorActiveThird = $('.sector_3-active');
 
-	// #1
-
 	character.hover(function(){
-		underText.toggleClass('underText_1-active')
-		sectorSecond.toggleClass('sector_2-active')
-		sectorThird.toggleClass('sector_3-active-notSo')
-
+		underText.toggleClass('underText_1--active')
+		sectorSecond.toggleClass('sector_2--active')
+		sectorThird.toggleClass('sector_3--not-so-active')
 	});
-
-	// #2
 
 	characterSecond.hover(function(){
-		underTextSecond.toggleClass('underText_2-active')
-		sector.toggleClass('sector_1-active-notSo')
-		sectorThird.toggleClass('sector_3-active')
+		underTextSecond.toggleClass('underText_2--active')
+		sector.toggleClass('sector_1--not-so-active')
+		sectorThird.toggleClass('sector_3--active')
 
 	});
 
-	// #3
-
 	characterThird.hover(function(){
-		underTextThird.toggleClass('underText_3-active')
-		sector.toggleClass('sector_1-active-notSo')
-		sectorSecond.toggleClass('sector_2-active')
+		underTextThird.toggleClass('underText_3--active')
+		sector.toggleClass('sector_1--not-so-active')
+		sectorSecond.toggleClass('sector_2--active')
 
 	});
 
@@ -49,23 +42,41 @@ $(document).ready(function(){
 		// musicPanel
 
 
+	$('.contactBtn').click(function(){
+		$('.socialMedias').toggleClass('socialMedias_passive')
+		$('.contactBtn').toggleClass('contactBtn_active')
+		$('.contactNav').toggleClass('contactNav_active')
+	});
+
+
 	var brightText = $('.brightText');
+	backBtn = $('.sidebar--back');
+	closeBtn = $('.sidebar--close');
+
+	$('.hamburger').click(function(){
+		$('.sidebar__1').toggleClass('sidebar__active')
+		$('.hamburger').toggleClass('hamburger__inactive')
+	});
 
 	brightText.click(function(){
-		$('.sidebar__1').toggleClass('active')
-
+		$('.sidebar__1').toggleClass('sidebar__active')
+		$('.hamburger').toggleClass('hamburger__inactive')
+	});
+	backBtn.click(function(){
+		if ($(".sidebar__1").hasClass('sidebar__active')) {
+			$('aside').removeClass('sidebar__active')
+			$('.hamburger').toggleClass('hamburger__inactive')
+		} else {
+			$('aside').removeClass('sidebar__active')
+			$('.sidebar__1').toggleClass('sidebar__active')
+		}
 	});
 	closeBtn.click(function(){
-		asides.removeClass('active')
+		$('aside').removeClass('sidebar__active')
+		$('.hamburger').toggleClass('hamburger__inactive')
 	});
-
-	function selectAlbum(almubname) {
-		aside.removeClass('active')
-		if (almubname == 'freedom') {
-			$('.sidebar__freedom').addClass('active')
-		} else if (almubname == 'heavy-rain') {
-			$('.sidebar__heavy-rain').addClass('active')
-		}
-	}
-
 });
+
+
+
+	
