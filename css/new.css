@@ -27,7 +27,6 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1); 
-    border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3); 
@@ -90,11 +89,11 @@ body {
 	bottom: 50px;
 	left: 50px;
 
-	border: 1px solid rgba(255,255,255, .7);
+	border: 1px solid rgba(255,255,255, 1);
 
 	border-radius: 50px;
 	box-sizing: border-box;
-	transition: .2s all;
+	transition: .2s easy-in-out;
 }
 
 .contactNav img {
@@ -235,7 +234,6 @@ body {
 
 
 .socialMedias_passive {
-	width: 0;
 	padding: 0;
 }
 
@@ -243,9 +241,15 @@ body {
 .socialMedias_passive li a,
 .socialMedias_passive li a img {
 	opacity: 0;
+	-moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+	transform: scale(0);
 	width: 0;
 	margin: 0;
 	padding: 0;
+	transition: .2s all;
 }
 
 /*---*/
