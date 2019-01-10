@@ -59,9 +59,15 @@ $(document).ready(function(){
 	});
 
 	brightText.click(function(){
-		$('.sidebar__1').toggleClass('sidebar__active')
-		$('.hamburger').toggleClass('hamburger__inactive')
+		if ($(".sidebar").hasClass('sidebar__active')) {
+			$('aside').removeClass('sidebar__active')
+			$('.hamburger').removeClass('hamburger__inactive')
+		} else {
+			$('.sidebar__1').toggleClass('sidebar__active')
+			$('.hamburger').toggleClass('hamburger__inactive')
+		}
 	});
+
 	backBtn.click(function(){
 		if ($(".sidebar__1").hasClass('sidebar__active')) {
 			$('aside').removeClass('sidebar__active')
@@ -77,6 +83,56 @@ $(document).ready(function(){
 	});
 });
 
+// проигрывание музыки при нажатии на буквы R/W/G
+
+var soundNameArr = ['C','C1','D','D1','E','F','F1','G','G1','A','A1','B'];
+var soundArr = [];
+var songsArr = [];
+var rand = 0;
+
+var notesOfSongs = [
+	[0,2,4,5,7,9,11],
+	[11,9,7,5,4,2],
+];
+
+for (var i = 0; i < soundNameArr.length; i++) {
+	soundArr[i] = new Audio;
+	soundArr[i].src = "Materials/notes/" + soundNameArr[i] + ".mp3";	
+}
+
+// добавляет в массив музоном (songsArr) песню (порядок воспроизвидения звуков)
+for (var swap = 0; swap < notesOfSongs.length; swap++) {
+	for (var i = 0; i < notesOfSongs[swap].length; i++) {
+		notesOfSongs[swap][i] = soundArr[notesOfSongs[swap][i]];
+		songsArr[swap] = notesOfSongs[swap];
+	}
+}
+
+// генерация случайного числа
+function randomInteger(min, max) {
+    var swap = min + Math.random() * (max + 1 - min);
+    swap = Math.floor(swap);
+    return swap;
+}
+
+var times = 0;
+
+function playAudio() {
+	(songsArr[rand][times]).play();
+	times++;
+	// обновление счетчика, при окончании песни
+	if (times >= (songsArr[rand]).length) {times = 0;} 
+	// смена песни на другую
+	var swap = rand;
+	if (times == 0) {rand = (randomInteger(1, songsArr.length) - 1);} 
+	while (rand == swap & times == 0) {
+		rand = (randomInteger(1, songsArr.length) - 1);
+	}
+}
+
+// function playAudio(){
+// 	var rand = Math.floor(Math.random() * soundNameArr.length); /*генерация случайного числа*/
+// 	soundArr[rand].play();
+// }
 
 
-	

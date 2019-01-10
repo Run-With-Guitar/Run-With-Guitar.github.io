@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/shaking.css">
 	<link rel="stylesheet" href="Materials/Fonts/fonts.css">
+	<link rel="stylesheet" href="css/preloader.css">
 
 	<script src="player.js"></script>
 	<script>
@@ -23,6 +24,23 @@
 	</script>
 </head>
 <body>
+	<body>
+	<div id="loading">
+		<div id="loading-center">
+			<div id="loading-center-absolute">
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+				<div class="object"></div>
+			</div>
+		</div>
+	</div>
+
 
 	<div class="hamburger" id="hamburger">
 		<span class="s1"></span>
@@ -36,21 +54,21 @@
 			<li><a href="https://www.youtube.com/channel/UCXqnJnNtzqJPhR89icwJJHA" target="_blank"><img src="Materials/SVG/icons/youtube-symbol.svg" alt="YouTube" id="YouTube"></a></li>
 			<li><a href="https://soundcloud.com/runwithguitar" target="_blank"><img src="Materials/SVG/icons/soundcloud.svg" alt="SoundCloud" id="SoundCloud"></a></li>
 			<li><a href="https://www.twitch.tv/zlou_kote" target="_blank"><img src="Materials/SVG/icons/twitch.svg" alt="Twitch" id="Twitch"></a></li>
-			<li><a href="https://discord.gg/XKM9T4" target="_blank"><img src="Materials/SVG/icons/discord.svg" alt="Discord" id="Discord"></a></li>
+			<li><a href="https://discord.gg/4wTFC4" target="_blank"><img src="Materials/SVG/icons/discord.svg" alt="Discord" id="Discord"></a></li>
 		</ul>
 	</div>
 	<div class="stripes">
 		<span class="sector sector_1">
 			<b class="dot dot_1"></b>
-			<i class="text transform text_1">R</i>
+			<i class="text transform text_1" onclick="playAudio()">R</i>
 		</span>
 		<span class="sector sector_2">
 			<b class="dot dot_2"></b>
-			<i class="text text_2">W</i>
+			<i class="text text_2" onclick="playAudio()">W</i>
 		</span>
 		<span class="sector sector_3">
 			<b class="dot dot_3"></b>
-			<i class="text text_3">G</i>
+			<i class="text text_3" onclick="playAudio()">G</i>
 		</span>
 		<div class="underText">
 			<span class="underText_1"><b>R</b>un</span>
@@ -88,7 +106,7 @@
 				<li><a href="https://www.youtube.com/channel/UCXqnJnNtzqJPhR89icwJJHA" target="_blank"><img src="Materials/SVG/icons/youtube-symbol.svg" alt="YouTube" id="YouTube"></a></li>
 				<li><a href="https://soundcloud.com/runwithguitar" target="_blank"><img src="Materials/SVG/icons/soundcloud.svg" alt="SoundCloud" id="SoundCloud"></a></li>
 				<li><a href="https://www.twitch.tv/zlou_kote" target="_blank"><img src="Materials/SVG/icons/twitch.svg" alt="Twitch" id="Twitch"></a></li>
-				<li><a href="https://discord.gg/XKM9T4" target="_blank"><img src="Materials/SVG/icons/discord.svg" alt="Discord" id="Discord"></a></li>
+				<li><a href="https://discord.gg/yBFNWNK" target="_blank"><img src="Materials/SVG/icons/discord.svg" alt="Discord" id="Discord"></a></li>
 			</ul>
 
 	</aside>
@@ -118,7 +136,7 @@
 		</div>
 		<div class="sidebar--content">
 			<div class="sidebar--album-image-and-info">
-				<img class="sidebar--album-image" src="Materials/Images/beach.png" style="opacity: .9;"><p class="sidebar--album-info"><span class="sidebar--album-info-header">2018</span><br>7 songs, 16 min</p>
+				<img class="sidebar--album-image" src="Materials/Images/beach.png" style="opacity: .9;"><p class="sidebar--album-info"><span class="sidebar--album-info-header">2017</span><br>7 songs, 16 min</p>
 			</div>
 			<div class="player" id="player__Cassette">
 				<audio volume="0.5" id="Cassette" class="player-audio" src="Materials/Songs/Freedom/Cassette.mp3" preload="auto"></audio>
@@ -292,5 +310,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="scroll.js"></script>
 	<script src="script.js"></script>
+	<script>
+		$(window).on('load', function () {
+		    $("#loading").fadeOut(500);			
+		});
+	</script>
 </body>
 </html>
